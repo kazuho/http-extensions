@@ -179,14 +179,15 @@ after the first SETTINGS frame. Detection of a change by a receiver MUST be
 treated as a connection error of type PROTOCOL_ERROR.
 
 Until the client receives the SETTINGS frame from the server, the client SHOULD
-send both the priority signal defined in the HTTP/2 priority scheme and also
-that of this prioritization scheme. Once the client learns that the HTTP/2
-priority scheme is deprecated, it SHOULD stop sending the HTTP/2 priority
-signals. If the client learns that the HTTP/2 priority scheme is not deprecated,
-it SHOULD stop sending PRIORITY_UPDATE frames ({{h2-update-frame}}), but MAY
-continue sending the Priority header field ({{header-field}}), as it is an
-end-to-end signal that might be useful to nodes behind the server that the
-client is directly connected to.
+send both the priority signals: the exclusive flag, stream dependency, weight
+fields of HEADERS and PRIORITY frames defined in HTTP/2 (hereafter referred to
+as HTTP/2 priority signals), and those of this prioritization scheme. Once the
+client learns that the HTTP/2 priority scheme is deprecated, it SHOULD stop
+sending the HTTP/2 priority signals. If the client learns that the HTTP/2
+priority scheme is not deprecated, it SHOULD stop sending PRIORITY_UPDATE frames
+({{h2-update-frame}}), but MAY continue sending the Priority header field
+({{header-field}}), as it is an end-to-end signal that might be useful to nodes
+behind the server that the client is directly connected to.
 
 The SETTINGS frame precedes any priority signal sent from a client in HTTP/2, so
 a server can determine if it should respect the HTTP/2 scheme before building
