@@ -1383,7 +1383,7 @@ ignore HTTP/2 priority signals.<a href="#section-2.1-4" class="pilcrow">¶</a></
 <p id="section-2.1-5">Servers can send SETTINGS_NO_RFC7540_PRIORITIES with a value of 1 to indicate
 that they will ignore HTTP/2 priority signals sent by clients.<a href="#section-2.1-5" class="pilcrow">¶</a></p>
 <p id="section-2.1-6">Endpoints that send SETTINGS_NO_RFC7540_PRIORITIES are encouraged to use
-alternative priority signals (for example, see Sections <a href="#header-field" class="xref">Section 5</a> or
+alternative priority signals (for example, see <a href="#header-field" class="xref">Section 5</a> or
 <a href="#h2-update-frame" class="xref">Section 7.1</a>) but there is no requirement to use a specific signal type.<a href="#section-2.1-6" class="pilcrow">¶</a></p>
 <div id="advice-when-using-extensible-priorities-as-the-alternative">
 <section id="section-2.1.1">
@@ -1905,13 +1905,12 @@ the order in which clients make requests. Doing so ensures that clients can use
 request ordering to influence response order.<a href="#section-10-5" class="pilcrow">¶</a></p>
 <p id="section-10-6">Incremental responses of the same urgency <span class="bcp14">SHOULD</span> be served by sharing bandwidth
 among them. The message content of incremental responses is used as parts, or
-chunks, as they are received. A client might benefit more from receiving a
-portion of all these resources rather than the entirety of a single resource.
-How large a portion of the resource is needed to be useful in improving
-performance varies. Some resource types place critical elements early; others
-can use information progressively. This scheme provides no explicit mandate
-about how a server should use size, type, or any other input to decide how to
-prioritize.<a href="#section-10-6" class="pilcrow">¶</a></p>
+chunks, are received. A client might benefit more from receiving a portion of
+all these resources rather than the entirety of a single resource. How large a
+portion of the resource is needed to be useful in improving performance varies.
+Some resource types place critical elements early; others can use information
+progressively. This scheme provides no explicit mandate about how a server
+should use size, type, or any other input to decide how to prioritize.<a href="#section-10-6" class="pilcrow">¶</a></p>
 <p id="section-10-7">There can be scenarios where a server will need to schedule multiple incremental
 and non-incremental responses at the same urgency level. Strictly abiding the
 scheduling guidance based on urgency and request generation order might lead
