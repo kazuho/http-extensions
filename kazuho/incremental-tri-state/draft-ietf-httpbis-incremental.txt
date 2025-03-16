@@ -117,7 +117,7 @@ Table of Contents
 
 3.  The Incremental Header Field
 
-   The Incremental HTTP header field expresses the sender's intent
+   The Incremental HTTP header field expresses the sender's preference
    regarding when HTTP intermediaries start forwarding the message
    downstream.
 
