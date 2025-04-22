@@ -1247,8 +1247,8 @@ true value, HTTP intermediaries <span class="bcp14">SHOULD NOT</span> buffer the
 forwarding it.  Instead, intermediaries <span class="bcp14">SHOULD</span> transmit the header section
 downstream and continuously forward the bytes of the message body as they
 arrive. As the Incremental header field indicates only how the message body is
-to be forwarded, intermediaries can still buffer the entire header section
-before forwarding it downstream.<a href="#section-3-4" class="pilcrow">¶</a></p>
+to be forwarded, intermediaries can still buffer the entire header and trailer
+sections of the message before forwarding it downstream.<a href="#section-3-4" class="pilcrow">¶</a></p>
 <p id="section-3-5">The Incremental HTTP header field applies to each HTTP message. Therefore, if
 both the HTTP request and response need to be forwarded incrementally, the
 Incremental HTTP header field <span class="bcp14">MUST</span> be set for both the HTTP request and the
