@@ -1245,7 +1245,9 @@ of Item and Boolean <span>[<a href="#STRUCTURED-FIELDS" class="cite xref">STRUCT
 intermediaries to start forwarding the message downstream before the entire
 message is received.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">The Incremental header field is defined as a structured field
-<span>[<a href="#STRUCTURED-FIELDS" class="cite xref">STRUCTURED-FIELDS</a>]</span> of a boolean Item.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<span>[<a href="#STRUCTURED-FIELDS" class="cite xref">STRUCTURED-FIELDS</a>]</span> of type Item.
+Only Boolean values (<span><a href="https://rfc-editor.org/rfc/rfc8941#section-3.3.6" class="relref">Section 3.3.6</a> of [<a href="#STRUCTURED-FIELDS" class="cite xref">STRUCTURED-FIELDS</a>]</span>) are valid;
+a recipient ignores the field if it contains any other type.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3-3">
 <pre>
 Incremental = sf-boolean
