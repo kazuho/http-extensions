@@ -5,10 +5,10 @@
 httpbis                                                 奥 一穂 (K. Oku)
 Internet-Draft                                                    Fastly
 Intended status: Standards Track                                T. Pauly
-Expires: 30 March 2026                                             Apple
+Expires: 23 April 2026                                             Apple
                                                               M. Thomson
                                                                  Mozilla
-                                                       26 September 2025
+                                                         20 October 2025
 
 
                        Incremental HTTP Messages
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 March 2026.
+   This Internet-Draft will expire on 23 April 2026.
 
 Copyright Notice
 
@@ -128,10 +128,17 @@ Table of Contents
    the entire message is received.
 
    The Incremental header field is defined as a structured field
-   [STRUCTURED-FIELDS] of type Item.  There is just one valid value,
-   which is of type Boolean: "?1".
+   [STRUCTURED-FIELDS] of a boolean Item.
 
-   Incremental = ?1
+   Incremental = sf-boolean
+
+   A true value ("?1") indicates that the sender requests intermediaries
+   to forward the message incrementally, as described below.
+
+   A false value ("?0") indicates the default behavior defined in
+   [HTTP], where intermediaries might buffer the entire message before
+   forwarding it.  This behavior is equivalent to the case where the
+   Incremental header field is not present.
 
    Upon receiving a header section that includes an Incremental header
    field with a true value, HTTP intermediaries SHOULD NOT buffer the
@@ -168,6 +175,10 @@ Table of Contents
    bidirectional protocols over HTTP, Extended CONNECT
    [RFC8441][RFC9220] is generally more consistent with HTTP's
    architecture.
+
+   This document does not define any parameters for the Incremental
+   header field value, but future documents might define parameters.
+   Receivers MUST ignore unknown parameters.
 
 4.  Security Considerations
 
