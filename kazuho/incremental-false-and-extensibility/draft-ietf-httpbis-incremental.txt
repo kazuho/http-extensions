@@ -139,8 +139,7 @@ Table of Contents
 
    A false value ("?0") indicates the default behavior defined in
    [HTTP], where intermediaries might buffer the entire message before
-   forwarding it.  This behavior is equivalent to the case where the
-   Incremental header field is not present.
+   forwarding it.
 
    Upon receiving a header section that includes an Incremental header
    field with a true value, HTTP intermediaries SHOULD NOT buffer the
